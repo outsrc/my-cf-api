@@ -1,0 +1,17 @@
+name = "my-cf-api"
+type = "javascript"
+account_id = "<ACCOUNT_ID>"
+entry-point = "build"
+workers_dev = true
+
+kv-namespaces = [
+  { binding = "TODOS", id = "<NAMESPACE_ID>" }
+]
+
+[env.production]
+zone_id = "<ZONE_ID>"
+route = "api.yourdomain.com/*"
+
+kv-namespaces = [
+  { binding = "TODOS", id = "<NAMESPACE_ID>" }
+]
